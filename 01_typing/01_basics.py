@@ -5,7 +5,6 @@ def log(something: Any) -> None:
     """This function accepts any argument and returns nothing."""
     print("Logging:", something)
 
-
 log(1.23)
 log("john")
 
@@ -36,3 +35,13 @@ def total_ndim(shape: tuple[int, ...]) -> int:
     for dim in shape:
         total *= dim
     return total
+
+numbers: list[int] = []
+numbers.append("bob") # BAD!
+numbers.append(1.23)  # BAD! float can't be used like an int.
+numbers.append(123)  # Fine!
+
+values: list[float] = []
+values.append("bob") # BAD!
+values.append(123) # Fine! (int can be used like a float.)
+values.append(1.23)
