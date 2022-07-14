@@ -1,4 +1,5 @@
-from typing import Iterable, Sized, TypeVar, Generic, Sequence
+from typing import Any, Iterable, Sized, TypeVar, Generic, Sequence
+
 
 T = TypeVar("T")
 
@@ -7,9 +8,14 @@ class Space(Generic[T]):
     def sample(self) -> T:
         ...
 
+    def contains(self, v: Any) -> bool:
+        ...
 
-box: Space[float]
-discrete: Space[int]
+
+Box = Space[float]
+Discrete = Space[int]
+Tuples = Space[tuple]
+Mappings = Space[dict]
 
 
 # Generic function:
