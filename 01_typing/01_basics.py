@@ -1,12 +1,16 @@
 from typing import Any
 
+a: int = 132
+a = "bob"  # BAD!
 
-def log(something: Any) -> None:
+
+def foo(something):
     """This function accepts any argument and returns nothing."""
     print("Logging:", something)
 
-log(1.23)
-log("john")
+
+foo(1.23)
+foo("john")
 
 
 def greeting(name: str) -> str:
@@ -36,12 +40,13 @@ def total_ndim(shape: tuple[int, ...]) -> int:
         total *= dim
     return total
 
+
 numbers: list[int] = []
-numbers.append("bob") # BAD!
+numbers.append("bob")  # BAD!
 numbers.append(1.23)  # BAD! float can't be used like an int.
 numbers.append(123)  # Fine!
 
 values: list[float] = []
-values.append("bob") # BAD!
-values.append(123) # Fine! (int can be used like a float.)
+values.append("bob")  # BAD!
+values.append(123)  # Fine! (int can be used like a float.)
 values.append(1.23)
